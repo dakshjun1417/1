@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            body{
+                background-color: gray;
+            }
+            .container{
+                font-size: 40px;
+                min-height: 100px;
+                width: 100%;
+                background-color:gray;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                grid-gap: 10px 10px;
+                
+            }
+            .container1{
+                font-size:20px;
+                min-height: 50px;
+                width:100%;
+                background: white;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows:40px 80px 50px 80px 50px 20px;
+                grid-template-areas: 
+                "a a"
+                "b b"
+                "b b"
+                "b b"
+                "b b"
+                "c c";
+            }
+            
+            .item{
+                background-color: white;
+                font-size: 15px;
+            }
+            .item1{
+                grid-area: a;
+                font-size: 25px;
+            }
+            .item2{
+                grid-area: c;
+                font-size: 15px;
+            }
+            .item61{
+                font-size: 18px;
+            }
+            .container5{
+                font-size: 20px;
+                min-height: 50px;
+                width: 100%;
+                background: white;
+                display: grid;
+                grid-template-rows: 40px 260px 20px;
+                grid-template-areas: 
+                "a"
+                "b"
+                "c";
+            }
+            .container3{
+                background: white;
+                width: 100%;
+                height: 300px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 3fr 1fr;
+                grid-template-areas: 
+                "b b b b b"
+                "c c c c c"
+                "a a a a a";
+                align-items: baseline;
+            }
+            .item7{
+                grid-area: b;
+                font-size: 40px;
+            }
+            .strip{
+                width:100%;
+                height: 27px;
+                background-color: #5F9EA0;
+                font-size: 20px;
+                color: white;
+                align-self: center;
+
+
+            }
+            .strip1{
+                width:100%;
+                height: 27px;
+                background-color: #2C3E4C;
+                font-size: 20px;
+                color: white;
+                justify-content: center;
+                align-self: center;
+                margin-left: auto;
+  margin-right: auto;
+                
+
+            }
+            .strip3{
+                width:100%;
+                height: 40px;
+                background-color: #00308F;
+                font-size:20px;
+                color: white;
+                margin-top: auto;
+                margin-bottom: auto;
+                align-items: flex-start;
+
+            }
+            .center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 78%;
+}
+.container11{
+    text-align: center;
+    font-size: 35px;
+    background: white;
+
+}
+.container12{
+    font-size: 20px;
+    width: 60%;
+    height: 27px;
+    background: #CCCC00;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    border-color: black;
+    border-width: 1px;
+    border-style: solid;
+}
+.container13{
+    width: 100%;
+    height:40px;
+    background-color: gray;
+}
+
+        </style>
+    </head>
+    <div class="strip3">
+        <img src="data:image/png;base64,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" height="40px" width="10%">
+        &nbsp;&nbsp;&nbsp;
+        <a href="#">
+        Add your address&nbsp;&nbsp;
+        </a>
+        <label for="cars"></label>
+
+<select name="cars" id="cars" width="20px">
+    <option value="all">all</option>
+  <option value="deals">Deals</option>
+  <option value="amazon devices">amazon devices</option>
+  <option value="amazon fashion">amazon fashion</option>
+  <option value="amazon pantry">Amazon pantry</option>
+</select>
+<input type="text" placeholder="Search.."><input type="submit">
+    </div>
+    <div class="strip">&nbsp;&nbsp;&#8801;<a href="#">All</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Mobiles</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Today's deals</a>
+        &nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#">Fashion</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">New releases</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="#">Prime</a>&nbsp;&nbsp;&nbsp;&nbsp;
+        <a href="#">Electronics</a>
+    </div>
+    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img17/Pantry/Feb2021/GWHero/SVD_ICICI_CONSUMABLES_HERO_3000x1200._CB661189753_.jpg" width="100%" height="250px">
+    <div class="container">
+        <div class="container1">
+            <div class="item1">
+                <strong>Revamp your home in style</strong> 
+            </div>
+            <div class="item">
+                <a href="#">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/BAU/GWPC/XCM_Manual_372x232_1212890_372X232_1_bd034eee_6f06_4e0a_9967_d0e0e5f7f932_jpg._SY232_CB423376240_.jpg" width="80%" height="80px"></a>
+            </div>
+            <div class="item">
+                <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/BAU/GWPC/XCM_Manual_372x232_1212890_372X232_2_64e793dc_221d_4067_8fca_2f0338879977_jpg._SY232_CB423376240_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              Bedsheets, curtains & more
+          </div>
+          <div class="item">
+              Home decoration
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/BAU/GWPC/XCM_Manual_372x232_1212890_372X232_3_ccc0f761_ea08_4cfb_9562_6f13e80170d8_jpg._SY232_CB423376240_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG20/Home/BAU/GWPC/XCM_Manual_372x232_1212890_372X232_4_bc4e9dc4_a3aa_4aae_93fd_9723dacd805f_jpg._SY232_CB423376240_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              Home storage
+          </div>
+          <div class="item">
+              lighting storage
+          </div>
+          <div class="item2">
+            <a href="#">Explore all</a>
+        </div>
+
+
+        </div>
+        <div class="container1">
+            <div class="item1">
+                <strong>Home essentials | Amazon </strong> 
+            </div>
+            <div class="item">
+                <a href="#">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/AmazonBrands/GW/2-1_372x232._SY232_CB430773130_.jpg" width="80%" height="80px"></a>
+            </div>
+            <div class="item">
+                <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/AmazonBrands/GW/2-4_372x232._SY232_CB430773125_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              Bedsheets, curtains & more
+          </div>
+          <div class="item">
+            Cloth organizers, boxes & baskets
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/AmazonBrands/GW/2-2_372x232._SY232_CB430773125_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/AmazonBrands/GW/2-3_372x232._SY232_CB430773130_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              Wall stickers & clocks
+          </div>
+          <div class="item">
+              Smart bulbs & string lights
+          </div>
+          <div class="item2">
+            <a href="#">Explore all</a>
+        </div>
+
+        </div>
+        <div class="container1">
+            <div class="item1">
+                <strong>Top picks for your home </strong> 
+            </div>
+            <div class="item">
+                <a href="#">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Desktop_QC_tile_graphic_372x232_1._SY232_CB414480869_.jpg" width="80%" height="80px"></a>
+            </div>
+            <div class="item">
+                <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Desktop_QC_tile_graphic_186x116_2._SY232_CB414480869_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              ACs
+          </div>
+          <div class="item">
+            Washing machines
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Desktop_QC_tile_graphic_372x232_4._SY232_CB414480869_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/IMG15/Irfan/Desktop_QC_tile_graphic_372x232_3._SY232_CB414480869_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              Televisions
+          </div>
+          <div class="item">
+              Refrigerators
+          </div>
+          <div class="item2">
+            <a href="#">Explore all</a>
+        </div>
+
+        </div>
+        <div class="container11">
+            <strong>Sign in for your best experience</strong>
+            <br>
+            
+
+            <div class="container12">
+                <a href="#">
+                Sign in privately
+            </a>
+            </div><br>
+            <div class="container13"></div>
+            <img src="https://m.media-amazon.com/images/G/31/img19/AMS/Houseads/Laptops-Sept2019._CB436595915_.jpg" height="200px" width="100%">
+
+        </div>
+        <div class="container1">
+            <div class="item1">
+                <strong>Style for Women </strong> 
+            </div>
+            <div class="item">
+                <a href="#">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/WF-372-232/1._SY232_CB413571131_.jpg" width="80%" height="80px"></a>
+            </div>
+            <div class="item">
+                <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/WF-372-232/2._SY232_CB413571131_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              Women's Clothing
+          </div>
+          <div class="item">
+            Footwear+Handbags
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/WF-372-232/3._SY232_CB413571131_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Fashion/EVENT/WRS_Dec/GW/BTF/PC/WF-372-232/5._SY232_CB413571131_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              Watches
+          </div>
+          <div class="item">
+              Fashion jewellery
+          </div>
+          <div class="item2">
+            <a href="#">Explore all</a>
+        </div>
+
+        </div>
+        <div class="container5">
+            <div class="item1">
+                <strong>Refurbished Phones</strong>
+                
+            </div>
+            <div class="item">
+                <a href="#">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/in-certifiedrefurbished/gateway/Ver2_GW._SY608_CB446171261_.jpg" width="100%" height="260px"></a>
+            </div>
+            <div class="item2">
+                <a href="#">See more</a>
+            </div>
+        </div>
+        <div class="container1">
+            <div class="item1">
+                <strong>Your safety, our priority </strong> 
+            </div>
+            <div class="item">
+                <a href="#">
+                <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Gateway/Zeitgeist/Mar20/Covid19/Consolidated/IN_GWD_Zeitgeist_Covid19_QC_SafeDelivery_2x._SY232_CB431768934_.jpg" width="80%" height="80px"></a>
+            </div>
+            <div class="item">
+                <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Gateway/Zeitgeist/Mar20/Covid19/Consolidated/IN_GWD_Zeitgeist_Covid19_QC_AmzResponseBike_2x._SY232_CB431768935_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              Keeping deliveries safe
+          </div>
+          <div class="item">
+            Amazon's response to COVID-19
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Gateway/Zeitgeist/Mar20/Covid19/Consolidated/IN_GWD_Zeitgeist_Covid19_QC_BeSafeMag_2x._SY232_CB431768935_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+            <a href="#">
+              <img src="https://images-eu.ssl-images-amazon.com/images/G/31/Gateway/Zeitgeist/Mar20/Covid19/Consolidated/IN_GWD_Zeitgeist_Covid19_QC_MoHFW_2x._SY232_CB431768935_.jpg" width="80%" height="80px"></a>
+          </div>
+          <div class="item">
+              Tip to stay safe and protected 
+          </div>
+          <div class="item">
+              COVID-19 updates from govt.
+          </div>
+          <div class="item2">
+            <a href="#">Know more</a>
+        </div>
+    </div>
+    <div class="container5">
+        <div class="item1">
+            <strong>Valentine's day</strong>
+            
+        </div>
+        <div class="item">
+            <a href="#">
+            <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Events/Vday2021/GW/PCCC_2._SY608_CB661022457_.jpg" width="100%" height="260px"></a>
+        </div>
+        <div class="item2">
+            <a href="#">See more</a>
+        </div>
+    </div>
+        
+  </div>
+
+  <br>
+  <div class="container3">
+    <div class="item7">Today's deals&nbsp;&nbsp;<a href="#">
+      <div class="item61">  See all</div></a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/51QO4iATxCL._AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/51ivRBHcH6L.__AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/41AYsoOVQwL.__AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/51RXzjrUmkL._AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/51TssoP1OTL._AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    <div class="item9">&nbsp;&nbsp;Rs. 840</div>
+    <div class="item9">&nbsp;&nbsp;Rs. 105</div>
+    <div class="item9">&nbsp;&nbsp;Rs. 49</div>
+    <div class="item9">&nbsp;&nbsp;Rs. 1100</div>
+    <div class="item9">&nbsp;&nbsp;Rs. 399</div>
+    <br>
+</div>
+<br>
+<a href="#">
+    <img src="https://m.media-amazon.com/images/G/31/AMS/IN/970X250-_desktop_banner.jpg" width="100%" height="240px" class="center">
+</a>
+<br>
+<br>
+<div class="container3">
+    <div class="item7">Up to 70% off | Clothing, bags & more from Indian startups&nbsp;&nbsp;<a href="#">
+        <div class="item61">See all</div></a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/31zSAfa6PfL._AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/71Y32csE9vL._AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/716PSNatsfL._AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/61Z47yy691L._AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    <div><a href="#"><img src="https://m.media-amazon.com/images/I/61lIRJFmYXL._AC_SY400_.jpg" width="80%" height="180px">
+    </a>
+    </div>
+    
+    <br>
+</div>
+<br>
+<br>
+    
+    <img src="https://images-eu.ssl-images-amazon.com/images/G/31/img20/Vernac13th/3000x300_V2_Eng_2x._CB412597113_.jpg" width="100%" height="180px">
+    
+<div class="strip1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    &nbsp;&nbsp;<a href="#">
+    Back to top
+</a>
+</div>
+    
+
+  
+    
+</html>
