@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            
+            .mainstrip{
+                background: linear-gradient(0deg, gray, dimgray, gray);
+                width: 584px;
+                height:20px;
+                display: flex;
+                align-items: center;
+                align-content: center;
+            }
+            
+            .strip{
+                width: 584px;
+                height: 3px;
+                background: linear-gradient(0deg, gray, dimgray, gray);
+
+            }
+            .strip1{
+                width: 35px;
+                height: 1px;
+                background: linear-gradient(0deg, gray, dimgray, gray);;
+            }
+            .strip2{
+                width: 35px;
+                height: 14.5px;
+                background: linear-gradient(0deg, gray, dimgray, gray);;
+            }
+            .container{
+                height: 100%;
+                width: 584px;
+                display: grid;
+                background: linear-gradient(0deg, gray, dimgray, gray);;
+                grid-template-columns: 1px 45px repeat(12, 35px) 72px 1px;
+                grid-template-rows: 28px;
+                grid-gap: 4px 3px; 
+                
+            }
+            .container1{
+                height: 100%;
+                width: 584px;
+                display: grid;
+                background: linear-gradient(0deg, gray, dimgray, gray);;
+                grid-template-columns: 1px 63px repeat(12, 35px) 54px 1px;
+                grid-template-rows: 28px;
+                grid-gap: 4px 3px; 
+                
+            }
+            .container2{
+                height: 100%;
+                width: 584px;
+                display: grid;
+                background:linear-gradient(0deg, gray, dimgray, gray);;
+                grid-template-columns: 1px 73px repeat(11, 35px) 82px 1px;
+                grid-template-rows: 28px;
+                grid-gap: 4px 3px; 
+                
+            }
+            .container3{
+                height: 100%;
+                width: 584px;
+                display: grid;
+                background: linear-gradient(0deg, gray, dimgray, gray);;
+                grid-template-columns: 1px 89px repeat(10, 35px) 104px 1px;
+                grid-template-rows: 28px;
+                grid-gap: 4px 3px; 
+                align-content: center;
+                
+            }
+            .container4{
+                height: 100%;
+                width: 584px;
+                display: grid;
+                background: linear-gradient(0deg, gray, dimgray, gray);;
+                grid-template-columns: 1px 73px 35px 70px 197px repeat(5, 35px) 1px;
+                grid-template-rows: 28px;
+                grid-gap: 4px 3px; 
+                align-content: center;
+                
+            }
+            .item{
+                background: black;
+                font-size: 12px;
+               text-align: center;
+               color: white;
+               font-family: Helvetica;
+               border-radius: 5px;
+               
+            }
+            .item1{
+                background: black;
+                font-size: 12px;
+                text-align: start;
+                color: white;
+                font-family: Helvetica;
+                border-radius: 4px;
+                
+               
+            }
+            .item2{
+                background: black;
+                font-size: 12px;
+                text-align: end;
+                color: white;
+                font-family: Helvetica;
+                border-radius: 5px;
+               
+            }
+            .item3{
+                background-color:gray;
+            }
+            .item:hover{
+                background: black;
+                font-size: 12px;
+               text-align: center;
+               color: white;
+               font-family: Helvetica;
+               border-radius: 5px;
+                transform: scale(1.1);
+                
+            }
+            .item1:hover{
+                background: black;
+                font-size: 12px;
+                text-align: start;
+                color: white;
+                font-family: Helvetica;
+                border-radius: 5px;
+                transform: scale(1.1);              
+            }
+            .item2:hover{
+                background: black;
+                font-size: 12px;
+                text-align: end;
+                color: white;
+                font-family: Helvetica;
+                border-radius: 5px;
+                transform: scale(1.1);
+               
+            }
+        </style>
+    </head>
+    <body>
+        <div class="mainstrip">
+            
+        </div>
+        <div class="strip"></div>
+    <div class="container">
+        <div class="item3"></div>
+        <div class="item">&nbsp;~<br>&nbsp;`</div>
+        <div class="item">!<br>1</div>
+        <div class="item">@<br>2</div>
+        <div class="item">#<br>3</div>
+        <div class="item">$<br>4</div>
+        <div class="item">%<br>5</div>
+        <div class="item">^<br>6</div>
+        <div class="item">&<br>7</div>
+        <div class="item">*<br>8</div>
+        <div class="item">(<br>9</div>
+        <div class="item">)<br>0</div>
+        <div class="item">-<br>-</div>
+        <div class="item">+<br>=</div>
+        <div class="item2">Backspace&nbsp;</div>
+        <div class="item3"></div>
+    </div>
+    <div class="strip"></div>
+    <div class="container1">
+        <div class="item3"></div>
+        <div class="item1">&nbsp;tab</div>
+        <div class="item">q</div>
+        <div class="item">w</div>
+        <div class="item">e</div>
+        <div class="item">r</div>
+        <div class="item">t</div>
+        <div class="item">y</div>
+        <div class="item">u</div>
+        <div class="item">i</div>
+        <div class="item">o</div>
+        <div class="item">p</div>
+        <div class="item">{<br>[</div>
+        <div class="item">}<br>]</div>
+        <div class="item">|<br>\</div>
+        <div class="item3"></div>
+
+    </div>
+    <div class="strip"></div>
+    <div class="container2">
+        <div class="item3"></div>
+        <div class="item1">&nbsp;Caps Lock</div>
+        <div class="item">a</div>
+        <div class="item">s</div>
+        <div class="item">d</div>
+        <div class="item">f</div>
+        <div class="item">g</div>
+        <div class="item">h</div>
+        <div class="item">j</div>
+        <div class="item">k</div>
+        <div class="item">l</div>
+        <div class="item">:<br>;</div>
+        <div class="item">"<br>'</div>
+        <div class="item2">enter&nbsp;</div>
+        <div class="item3"></div>
+    </div>
+    <div class="strip"></div>
+    <div class="container3">
+        <div class="item3"></div>
+        <div class="item1">&nbsp;shift</div>
+        <div class="item">z</div>
+        <div class="item">x</div>
+        <div class="item">c</div>
+        <div class="item">v</div>
+        <div class="item">b</div>
+        <div class="item">n</div>
+        <div class="item">m</div>
+        <div class="item"><<br>,</div>
+        <div class="item">><br>.</div>
+        <div class="item">?<br>/</div>
+        <div class="item2">shift&nbsp;</div>
+        <div class="item3"></div>
+
+    </div>
+    <div class="strip"></div>
+    <div class="container4">
+        <div class="item3"></div>
+        <div class="item1">&nbsp;ctrl</div>
+        <div class="item">fn</div>
+        <div class="item1">&nbsp;alt</div>
+        <div class="item"></div>
+        <div class="item">alt</div>
+        <div class="item">ctrl</div>
+        <div class="item">
+            <div class="strip2"></div>
+            &#8592;
+        </div>
+        <div class="item">
+            &#8593; <div class="strip1">
+                </div>
+                &#8595;
+        </div>
+        <div class="item">
+            <div class="strip2"></div>
+            &#8594;
+        </div>
+        <div class="item3"></div>
+    </div>
+    <div class="strip"></div>
+   
+</body>
+</html>
